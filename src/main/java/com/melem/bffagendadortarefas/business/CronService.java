@@ -15,8 +15,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 @RequiredArgsConstructor
 @Service
-@Slf4j
-//Anotação do Lombok para criar um logger, para que possamos logar as informações do CRON,OU OUTRAS FUNCIONALIDADES para saber quando ele foi executado, se teve algum erro, etc.
+@Slf4j //Anotação do Lombok para criar um logger, para que possamos logar as informações do CRON,OU OUTRAS FUNCIONALIDADES para saber quando ele foi executado, se teve algum erro, etc.
 public class CronService {
     private final TarefaService tarefaService;
     private final EmailService emailService;
