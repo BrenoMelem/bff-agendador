@@ -2,6 +2,7 @@ package com.melem.bffagendadortarefas.controller;
 //Para que consiggamos receber esses tratamentos pelo Feingcliente, lembrando que só temos os retornos, e não estamos tratando nenhuma exceção no client.
 // Para isso, configurar duas classes. Para tratar no FeignCleinte
 import com.melem.bffagendadortarefas.infrastructure.exceptions.ConflictException;
+import com.melem.bffagendadortarefas.infrastructure.exceptions.IllegalArgumentException;
 import com.melem.bffagendadortarefas.infrastructure.exceptions.ResourceNotFoundException;
 import com.melem.bffagendadortarefas.infrastructure.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
@@ -23,5 +24,9 @@ public class GlobalExceptionHandler {
     @ExceptionHandler (UnauthorizedException.class)
     public ResponseEntity<String> handlerUnauthorizedException(UnauthorizedException exception){
         return new ResponseEntity<>(exception.getMessage(),HttpStatus.UNAUTHORIZED);
+    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handlerIllegalArgumentException (IllegalArgumentException exception){
+        return new ResponseEntity<>(exception.getMessage(),HttpStatus.BAD_REQUEST);
     }
 }

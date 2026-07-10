@@ -46,7 +46,7 @@ public class CronService {
     //Qualquer tarefa que fique entre a hora atual e a hora futura mais 1
     // Se agora é 22h- QUALQUER TAREFA ENTRE 22H  E 23H
     //No momento, é 22 -qualquer tarefa entre 23 e 23:05 -- Antes.
-    //Como neste método está solicitando um token, precisamos criar um método para o nosso proprio sistema automatize o login para que possa enviar o token para o método.
+    //Como neste metodo está solicitando um token, precisamos criar um metodo para o nosso proprio sistema automatize o login para que possa enviar o token para o método.
 
     public String login(LoginRequestDto loginRequestDto) {
         return usuarioService.loginUsuario(loginRequestDto);
